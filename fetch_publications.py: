@@ -1,0 +1,18 @@
+import scholarly
+import json
+
+def fetch_publications():
+    author = scholarly.search_author_id('j0WOPWcAAAAJ')  # Replace with your Google Scholar ID
+    author = scholarly.fill(author)
+    publications = []
+    for pub in author['publications']:
+        publications.append({
+            'title': pub['bib']['title'],
+            'authors': ', '.join(pub['bib']['author']),
+            'year': pub['bib'].get('pub_year', 'N/A')
+        })
+    with open('publications.json', 'w') as f:
+        json.dump(publications, f, indent=4)
+
+if __name__ == "__main__":
+    fetch_publications()
