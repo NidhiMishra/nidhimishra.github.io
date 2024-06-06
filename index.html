@@ -6,27 +6,31 @@
     <title>Nidhi Mishra - Data Scientist</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
+            overflow-x: hidden;
         }
         header {
             background-color: #4CAF50;
             color: white;
             text-align: center;
-            padding: 1em 0;
+            padding: 2em 0;
+            animation: fadeInDown 2s ease-out;
         }
         nav {
             display: flex;
             justify-content: center;
             background: #333;
+            animation: fadeIn 2s ease-out;
         }
         nav a {
             color: white;
             padding: 14px 20px;
             text-decoration: none;
             text-align: center;
+            transition: background-color 0.3s ease-in-out;
         }
         nav a:hover {
             background-color: #ddd;
@@ -37,6 +41,7 @@
         }
         .section {
             margin: 20px 0;
+            animation: fadeInUp 1.5s ease-out;
         }
         footer {
             text-align: center;
@@ -46,6 +51,48 @@
             position: fixed;
             width: 100%;
             bottom: 0;
+            animation: fadeInUp 2s ease-out;
+        }
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        nav a {
+            animation: slideIn 1.5s ease-out;
         }
     </style>
 </head>
